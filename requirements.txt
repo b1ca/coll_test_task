@@ -1,0 +1,3 @@
+selenium==2.48.0
+git+git://github.com/APodobytkorps/webium#egg=webium
+fake-factory==0.5.2
