@@ -4,6 +4,7 @@ from webium import Find, Finds
 from .base_page import BasePage
 
 TABS = ('Description', 'Images', 'Financials', 'Offers', 'Consignments', 'Attachments', 'Locations')
+IMAGE_FILEPATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'img', 'dog.jpg')
 
 
 class ObjectPage(BasePage):
@@ -41,7 +42,7 @@ class ObjectPage(BasePage):
         self._activate_tab('Images')
         self.add_photo_btn.click()
         for _ in range(images_num):
-            self.files_input.send_keys(os.path.abspath('../img/dog.jpg'))
+            self.files_input.send_keys(IMAGE_FILEPATH)
         self.upload_all_btn.click()
         self.wait_for_loading()
         self.wait_for_visibility_of_element(element={'type': 'css', 'value': self.uploaded_images_css})
